@@ -24,7 +24,7 @@ class BookingController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $myBookings = Booking::where('user_id', auth()->id())->with(['time', 'futsal_court'])->get();
+            $myBookings = Booking::where('user_id', auth()->id())->with(['time', 'futsal_court'])->latest()->get();
 
             return DataTables::of($myBookings)
                 ->addIndexColumn()
@@ -45,16 +45,18 @@ class BookingController extends Controller
                 ->make();
         }
 
-        return view('user.index', [
+        return view('user.my-booking', [
             'myBookings' => Booking::where('user_id', auth()->id())->with(['time', 'futsal_court'])->get()
         ]);
+
+        // return view('user.my-booking');
     }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('user.create', [
+        return view('user.booking-create', [
             'times' => Time::get(),
             'futsal_courts' => FutsalCourt::get()
         ]);

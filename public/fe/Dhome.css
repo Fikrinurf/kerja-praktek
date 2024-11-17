@@ -1,0 +1,64 @@
+body{
+    background-color: #181562;
+}
+
+.text-hero{
+    margin-top: 40%;
+    color: white;
+}
+
+.text-hero h1{
+    font-size: 80px;
+}
+
+
+.btn-login{
+    background-color: #3329AE;
+    color: white;
+    border-radius: 15px;
+}
+
+.btn-login a:hover{
+    color: bisque;
+}
+
+
+
+.container-fasilitas{
+    margin-top: 100px;
+}
+
+.text-fasilitas{
+    color: white;
+}
+.container-fasilitas .card-fasilitas {
+
+    background-color: #3329AE;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.container-fasilitas .card-fasilitas .judul-fasilitas{
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.icon-fasilitas{
+
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+    
+    
+}
+
+.fasilitas-judul{
+    font-size: 70px;
+}
+
+.fasilitas-artikel{
+    font-size: 20px;
+}
+
+

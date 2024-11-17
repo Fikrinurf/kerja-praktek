@@ -1,0 +1,10 @@
+body{
+    background-color: #181562;
+}
+
+.card-news {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+}

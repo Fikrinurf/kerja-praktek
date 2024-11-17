@@ -24,7 +24,7 @@ class TimeSlotController extends Controller
                     return '
                     <div class="text-center">
                             <a href="/admin/time-slot/' . $time->id . '/edit" class="btn btn-primary">Edit</a>
-                            <a href="#" onclick="deleteArticle(this)" data-id="' . $time->id . '" class="btn btn-danger">Delete</a>
+                            <a href="#" onclick="deleteTime(this)" data-id="' . $time->id . '" class="btn btn-danger">Delete</a>
                     </div>';
                 })
                 ->rawColumns(['button'])
@@ -66,15 +66,18 @@ class TimeSlotController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.time-slot.edit', ['time' => Time::find($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TimeSlotReq $request, string $id)
     {
-        //
+        $data = $request->validated();
+
+        Time::find($id)->update($data);
+        return redirect(url('/admin/time-slot'))->with('success', 'Berhasil Mengupdate Data');
     }
 
     /**
@@ -82,6 +85,10 @@ class TimeSlotController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Time::find($id);
+        $data->delete();
+        return response()->json([
+            'message' => 'Berhasil menghapus waktu'
+        ]);
     }
 }

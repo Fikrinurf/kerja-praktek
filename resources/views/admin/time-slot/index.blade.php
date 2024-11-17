@@ -98,5 +98,44 @@
                 ]
             });
         })
+
+        function deleteTime(e) {
+            let id = e.getAttribute('data-id');
+
+            Swal.fire({
+                title: 'Delete',
+                text: 'Yakin Data Akan dihapus ?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        type: 'DELETE',
+                        url: '/admin/time-slot/' + id,
+                        dataType: "json",
+                        success: function(response) {
+                            Swal.fire({
+                                title: 'Success',
+                                text: response.message,
+                                icon: 'success',
+                            }).then((result) => {
+                                window.location.href = '/admin/time-slot';
+                            })
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+                        }
+                    });
+                }
+
+            })
+        }
     </script>
 @endpush

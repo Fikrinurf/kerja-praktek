@@ -10,7 +10,9 @@ class FutsalCourt extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+        'name'
+    ];
 
     public function bookings(): HasMany
     {

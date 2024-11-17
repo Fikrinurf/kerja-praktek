@@ -30,18 +30,21 @@ class SesiController extends Controller
         if (Auth::attempt($infoLogin)) {
             if (Auth::user()->role == 'admin') {
                 return redirect('/admin/pengelola');
+            } else if (Auth::user()->role == 'owner') {
+                return redirect('/owner');
             } else {
-                return redirect('/user-booking');
+                return redirect('/user-home');
             }
         } else {
             return redirect('/login')->withErrors('Username dan Password tidak sesuai')->withInput();
+            // return redirect()->back()->withErrors(['email' => 'Email atau kata sandi salah.']);
         }
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function register()

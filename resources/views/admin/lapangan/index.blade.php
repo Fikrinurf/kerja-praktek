@@ -3,8 +3,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 @endpush
 @section('content')
-    <h1 class="app-page-title">Tambah Jam</h1>
-    <a href="{{ url('/admin/time-slot/create') }}" class="btn btn-success mb-2">Create</a>
+    <h1 class="app-page-title">Tambah Lapangan</h1>
+    <a href="{{ url('/admin/lapangan/create') }}" class="btn btn-success mb-2">Create</a>
     @if ($errors->any())
         <div class="my-3">
             <div class="alert alert-danger">
@@ -30,7 +30,7 @@
                             <thead>
                                 <tr>
                                     <th class="cell">No</th>
-                                    <th class="cell">Slot Waktu</th>
+                                    <th class="cell">Lapangan</th>
                                     <th class="cell"></th>
                                 </tr>
                             </thead>
@@ -88,8 +88,8 @@
                         name: 'DT_RowIndex'
                     },
                     {
-                        data: 'time_slot',
-                        name: 'time_slot'
+                        data: 'name',
+                        name: 'name'
                     },
                     {
                         data: 'button',
@@ -98,5 +98,44 @@
                 ]
             });
         })
+
+        function deleteLapangan(e) {
+            let id = e.getAttribute('data-id');
+
+            Swal.fire({
+                title: 'Delete',
+                text: 'Yakin Data Akan dihapus ?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        type: 'DELETE',
+                        url: '/admin/lapangan/' + id,
+                        dataType: "json",
+                        success: function(response) {
+                            Swal.fire({
+                                title: 'Success',
+                                text: response.message,
+                                icon: 'success',
+                            }).then((result) => {
+                                window.location.href = '/admin/lapangan';
+                            })
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+                        }
+                    });
+                }
+
+            })
+        }
     </script>
 @endpush

@@ -1,0 +1,69 @@
+body{
+    background-color: #181562;
+}
+
+.container-service{
+    margin-top: 100px;
+}
+.container-service .card-service {
+
+    background-color: #3329AE;
+    height: 260px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.container-service .card-service .judul-service{
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-top: 20px;
+}
+
+.container-service .card-service .artikel-service{
+    color: white;
+    text-align: center;
+
+}
+
+.icon-service{
+
+   display: flex;
+   justify-content: center;
+   margin-top: 40px;
+    
+    
+}
+
+
+.service-artikel{
+    font-size: 20px;
+}
+
+.container-contact{
+    margin-left: 30px;
+}
+.card-contact{
+    width: 520px;
+    background-color: #D8D7E4;
+    border-radius: 20px;
+}
+
+.form-contact .form-group{
+    margin-top: 10px;}
+
+.form-contact .form-group input{
+    border-radius: 10px;
+}
+
+.form-contact .form-group textarea{
+    border-radius: 10px;
+}
+
+
+.container-maps{
+    color: white;
+}
+.card-maps iframe{
+    border-radius: 15px;
+}

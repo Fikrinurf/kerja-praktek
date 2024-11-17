@@ -1,0 +1,211 @@
+* {
+  padding: 0%;
+  margin: 0;
+}
+
+body {
+  background-color: #181562;
+  font-family: "Poppins", sans-serif;
+
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+
+}
+
+.btnGoogle {
+  width: 350px;
+  margin-top: -20px;
+  height: 40px;
+  padding: 5px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+  border: 2px solid #3A88DA;
+  font-size: 18px;
+  color: #000000;
+  border-radius: 20px;
+}
+
+.btnFacebook {
+  margin-top: 10px;
+  width: 350px;
+  height: 40px;
+  padding: 5px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  background-color: white;
+  border: 2px solid #3A88DA;
+  font-size: 18px;
+  color: #000000;
+  border-radius: 20px;
+}
+
+
+
+p {
+
+
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding-left: 100px;
+  padding-bottom: 20px;
+  margin-top: 30px;
+}
+
+
+
+
+.img-field {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  top: -34px;
+  left: 35px;
+
+}
+
+
+.form {
+
+  padding: 30px 30px;
+  height: auto;
+  border-radius: 40px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-left: 70px;
+  font-style: normal;
+  margin-right: 100px;
+
+}
+
+.form form {
+  margin-top: -20px
+}
+
+
+.form h1 {
+  text-align: center;
+  margin-right: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+
+
+
+
+}
+
+
+form .label-namaPengguna {
+  position: relative;
+  left: 30px;
+  top: 8px
+}
+
+form .label-email {
+  position: relative;
+  left: 30px;
+  top: 8px
+}
+
+form .label-telepon {
+  position: relative;
+  left: 30px;
+  top: 8px
+}
+
+form .label-kataSandi {
+  position: relative;
+  left: 30px;
+  top: 8px
+}
+
+.form form input {
+  width: 400px;
+  height: 38px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 2px solid #3A88DA;
+  font-size: 20px;
+  padding-left: 40px;
+
+}
+
+.field-email {
+  margin-top: -25px;
+
+}
+
+
+
+.field-telepon {
+  margin-top: -25px;
+}
+
+.field-kataSandi {
+  margin-top: -25px;
+}
+
+
+.btnDaftar {
+  width: 400px;
+  height: 40px;
+  padding: 5px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: #181562;
+  font-size: 18px;
+  color: #fafafa;
+  border-radius: 20px;
+}
+
+p a {
+  text-align: center;
+}
+
+
+
+.gambar h1 {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  text-align: left;
+  font-size: 40px;
+
+
+}
+
+.gambar {
+  margin-top: -40px;
+  display: block;
+
+
+}
+
+.gambar img {
+  margin-top: -100px;
+  margin-left: 55px;
+}
+
+.checkbox {
+  display: inline;
+  align-items: start;
+}
